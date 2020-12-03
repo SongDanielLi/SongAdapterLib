@@ -54,3 +54,6 @@ adapter.submitList(listOf(row))
 
 ## Reference
 [Android Kotlin Fundamentals: DiffUtil and data binding with RecyclerView](https://developer.android.com/codelabs/kotlin-android-training-diffutil-databinding#0)
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
