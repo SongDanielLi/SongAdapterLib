@@ -1,5 +1,6 @@
 package com.song.adapterlib
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 
@@ -8,11 +9,12 @@ abstract class BindingItem<Binding: ViewDataBinding, T> {
     abstract val viewType: Int
     abstract val value: T
 
-    abstract fun createBinding(parent: ViewGroup, viewType: Int): Binding
+    /** Implement  Binding.inflate(inflater,  parent , false) */
+    abstract fun createBinding(inflater: LayoutInflater, parent: ViewGroup, viewType: Int): Binding
     abstract fun onBind(binding: Binding)
 
     open fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder<Binding>{
-        val binding = createBinding(parent, viewType)
+        val binding = createBinding(LayoutInflater.from(parent.context), parent, viewType)
         return BindingViewHolder(binding)
     }
 

@@ -14,8 +14,8 @@ class HeaderRow(val listener: (View?) -> Unit): BindingItem<HeaderLayoutBinding,
     override val value: Int
         get() = R.drawable.golf
 
-    override fun createBinding(parent: ViewGroup, viewType: Int): HeaderLayoutBinding {
-        return HeaderLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    override fun createBinding(inflater: LayoutInflater, parent: ViewGroup, viewType: Int): HeaderLayoutBinding {
+        return HeaderLayoutBinding.inflate(inflater, parent, false)
     }
 
     override fun onBind(binding: HeaderLayoutBinding) {

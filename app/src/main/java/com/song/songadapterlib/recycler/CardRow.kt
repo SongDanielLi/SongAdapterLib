@@ -10,8 +10,8 @@ class CardRow(override val value: String): BindingItem<CardViewBinding, String>(
     override val viewType: Int
         get() = R.layout.card_view
 
-    override fun createBinding(parent: ViewGroup, viewType: Int): CardViewBinding {
-        return CardViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    override fun createBinding(inflater: LayoutInflater, parent: ViewGroup, viewType: Int): CardViewBinding {
+        return CardViewBinding.inflate(inflater, parent, false)
     }
 
     override fun onBind(binding: CardViewBinding) {
