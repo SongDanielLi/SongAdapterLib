@@ -11,14 +11,14 @@ class HeaderRow(val listener: (View?) -> Unit): BindingItem<HeaderLayoutBinding,
 
     override val viewType: Int
         get() = R.layout.header_layout
-    override val value: Int
+    override val data: Int
         get() = R.drawable.golf
 
     override fun createBinding(inflater: LayoutInflater, parent: ViewGroup, viewType: Int): HeaderLayoutBinding {
         return HeaderLayoutBinding.inflate(inflater, parent, false)
     }
 
-    override fun onBind(binding: HeaderLayoutBinding) {
+    override fun onBind(binding: HeaderLayoutBinding, position: Int) {
         binding.fab.setOnClickListener{ listener(it) }
     }
 }

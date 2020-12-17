@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.song.adapterlib.SongAdapter
+import com.song.adapterlib.BindingAdapter
 import com.song.adapterlib.BindingItem
 import com.song.songadapterlib.recycler.CardRow
 import com.song.songadapterlib.recycler.HeaderRow
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        val adapter = SongAdapter()
+        val adapter = BindingAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 

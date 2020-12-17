@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 
-class SongAdapter (diffCheck: DiffUtil.ItemCallback<BindingItem<*, *>> = CommonDiffUtil):
+class BindingAdapter (diffCheck: DiffUtil.ItemCallback<BindingItem<*, *>> = DiffCallback):
         ListAdapter<BindingItem<*, *>, BindingViewHolder<*>>(diffCheck){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder<*> {
@@ -22,12 +22,12 @@ class SongAdapter (diffCheck: DiffUtil.ItemCallback<BindingItem<*, *>> = CommonD
         return getItem(position).viewType
     }
 
-    private object CommonDiffUtil: DiffUtil.ItemCallback<BindingItem<*, *>>(){
+    private object DiffCallback: DiffUtil.ItemCallback<BindingItem<*, *>>(){
         override fun areItemsTheSame(oldItem: BindingItem<*, *>, newItem: BindingItem<*, *>): Boolean
                 = oldItem == newItem
 
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(oldItem: BindingItem<*, *>, newItem: BindingItem<*, *>): Boolean
-                = oldItem.value == newItem.value
+                = oldItem.data == newItem.data
     }
 }
